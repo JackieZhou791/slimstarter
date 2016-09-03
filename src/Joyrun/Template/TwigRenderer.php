@@ -1,8 +1,8 @@
 <?php
-namespace JoyRun\Template;
+namespace Joyrun\Template;
 
 use Twig_Environment;
-class TwigRenderer implements JoyRun\Template\Renderer
+class TwigRenderer implements Joyrun\Template\Renderer
 {
     private $renderer;
 

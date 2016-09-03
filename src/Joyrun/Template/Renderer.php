@@ -1,5 +1,5 @@
 <?php
-namespace JoyRun\Template;
+namespace Joyrun\Template;
 
 interface Renderer
 {

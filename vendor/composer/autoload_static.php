@@ -31,14 +31,23 @@ class ComposerStaticInit32b21d254b9e4c9a44b6a4b4e7c62d79
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\Yaml\\' => 23,
             'Symfony\\Component\\Translation\\' => 30,
+            'Symfony\\Component\\Filesystem\\' => 29,
             'Symfony\\Component\\DomCrawler\\' => 29,
             'Symfony\\Component\\CssSelector\\' => 30,
+            'Symfony\\Component\\Console\\' => 26,
+            'Symfony\\Component\\Config\\' => 25,
             'Slim\\Views\\' => 11,
+            'Slim\\Flash\\' => 11,
             'Slim\\' => 5,
+        ),
+        'R' => 
+        array (
+            'RKA\\' => 4,
         ),
         'P' => 
         array (
             'Psr\\Http\\Message\\' => 17,
+            'Phinx\\' => 6,
         ),
         'M' => 
         array (
@@ -103,6 +112,10 @@ class ComposerStaticInit32b21d254b9e4c9a44b6a4b4e7c62d79
         array (
             0 => __DIR__ . '/..' . '/symfony/translation',
         ),
+        'Symfony\\Component\\Filesystem\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/filesystem',
+        ),
         'Symfony\\Component\\DomCrawler\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/dom-crawler',
@@ -111,17 +124,37 @@ class ComposerStaticInit32b21d254b9e4c9a44b6a4b4e7c62d79
         array (
             0 => __DIR__ . '/..' . '/symfony/css-selector',
         ),
+        'Symfony\\Component\\Console\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/console',
+        ),
+        'Symfony\\Component\\Config\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/config',
+        ),
         'Slim\\Views\\' => 
         array (
-            0 => __DIR__ . '/..' . '/slim/php-view/src',
+            0 => __DIR__ . '/..' . '/slim/twig-view/src',
+        ),
+        'Slim\\Flash\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/slim/flash/src',
         ),
         'Slim\\' => 
         array (
             0 => __DIR__ . '/..' . '/slim/slim/Slim',
         ),
+        'RKA\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/akrabat/rka-slim-session-middleware/RKA',
+        ),
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
+        'Phinx\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/robmorgan/phinx/src/Phinx',
         ),
         'Monolog\\' => 
         array (
