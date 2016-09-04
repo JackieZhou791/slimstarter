@@ -11,6 +11,8 @@ class IndexController extends BaseController
         $c = $this->app->getContainer();
         $c['session']->set('name', 'jackie');
         $this->render('helloworld/index.html');
+
+
         return $this->response;
     }
 

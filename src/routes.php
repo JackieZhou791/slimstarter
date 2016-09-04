@@ -1,5 +1,9 @@
 <?php
 // Routes
+$app->get('/', function(){
+    echo 'Hello world!';
+});
+
 $app->group('/helloworld', function () use ($app) {
 
     $controller = new Application\Helloworld\Controllers\IndexController($app);
@@ -11,4 +15,13 @@ $app->group('/helloworld', function () use ($app) {
 //    $app->get('/{id:[0-9]+}/edit', $controller('edit'));
 //    $app->put('/{id:[0-9]+}', $controller('put'));
 //    $app->delete('/{id:[0-9]+}', $controller('delete'));
+});
+
+$app->group('/backoffice', function () use ($app) {
+
+    $controller = new Application\Backoffice\Controllers\IndexController($app);
+
+    $app->get('', $controller('index'))->setName('backoffice.index');
+    $app->get('/login', $controller('login'))->setName('backoffice.login');
+    $app->post('/loginPost', $controller('postLogin'))->setName('backoffice.postLogin');
 });

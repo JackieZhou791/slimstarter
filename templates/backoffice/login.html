@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Posters Galore Login</title>
+    <meta charset="utf-8">
+    <link href="/vendor/ng-admin/css/login.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="prefetch" href="/vendor/ng-admin/build/main.css"/>
+    <link rel="prefetch" href="/vendor/ng-admin/build/ng-admin.min.js"/>
+    <link rel="prefetch" href="/vendor/ng-admin/js/main.js"/>
+
+</head>
+<body>
+<div class="main">
+    <div class="login-form">
+        <h1>Slimstarter Back Office Login</h1>
+        <div class="head">
+            <img src="/vendor/ng-admin/images/user.png" alt=""/>
+        </div>
+        <div style="text-align: center;">{{ messages.note.0 }}</div>
+
+        <form id="loginForm" method="post" action="{{ path_for('backoffice.postLogin') }}">
+            <input type="text" class="text" id="username" name="username" value="Username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}"  class="required" >
+            <input type="password" value="Password" id="password" name="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}"  class="required" >
+            <div class="submit">
+                <input type="submit" value="Log In" >
+            </div>
+        </form>
+    </div>
+    <!-- start-copyright -->
+    <div class="copy-right">
+        <p>Template by <a href="http://w3layouts.com">w3layouts</a></p>
+    </div>
+    <!-- end-copyright -->
+</div>
+<script type="application/x-javascript">
+    window.addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+    function hideURLbar(){
+        window.scrollTo(0,1);
+    }
+</script>
+</body>
+</html>
