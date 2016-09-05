@@ -1,7 +1,6 @@
 <?php
 namespace Joyrun\Migration;
 
-
 use Illuminate\Database\Capsule\Manager as Capsule;
 use Phinx\Migration\AbstractMigration;
 
@@ -13,8 +12,8 @@ class Migration extends AbstractMigration {
 
     public function init()
     {
-
-        $s = require(__DIR__ . '/../../../src/settings.php');
+        $s = application_settings();
+        
         $this->capsule = new Capsule;
         $this->capsule->addConnection($s['settings']['database']['default']);
 

@@ -31,7 +31,8 @@
         "psr-4": {
             "Joyrun\\": "src/Joyrun/",
             "Application\\": "src/Application/"
-        }
+        },
+        "files": ["src/functions.php"]
     },
     "autoload-dev": {
         "psr-4": {

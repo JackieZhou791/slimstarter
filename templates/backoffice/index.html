@@ -8,16 +8,6 @@
 </head>
 <body ng-app="myApp">
 <div ui-view></div>
-<script type="text/javascript">
-    var username = window.localStorage.getItem('posters_galore_login');
-    if (!username) {
-        window.location.href = "./login.html";
-    }
-    function logout() {
-        window.localStorage.removeItem('posters_galore_login');
-        window.location.href = "./login.html";
-    }
-</script>
 <script type="text/javascript" src="/vendor/ng-admin/data.js" charset="utf-8"></script>
 <script type="text/javascript" src="/vendor/ng-admin/build/ng-admin.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="/vendor/ng-admin/build/main.js" charset="utf-8"></script>
