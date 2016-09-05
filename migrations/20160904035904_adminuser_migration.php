@@ -19,6 +19,17 @@ class AdminuserMigration extends Migration
             // Required for Eloquent's created_at and updated_at columns
             $table->timestamps();
         });
+        
+        $initUsers = [
+            [
+                'username'  => 'admin',
+                'email'     => 'zhoujieweb@thejoyrun.com',
+                'password'  => password_hash('password', PASSWORD_DEFAULT),
+                'role'      => 'admin',
+                'status'    => 1
+            ]
+        ];
+        $this->table('adminusers')->insert($initUsers)->save();
     }
 
     public function down()

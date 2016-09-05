@@ -9,7 +9,14 @@ class BaseModelTestCase extends  \PHPUnit_Framework_TestCase
     public function initApp()
     {
         // Use the application settings
-        $settings = require __DIR__ . '/../../src/settings.php';
+        //detect project enviroment
+        $devhosts = require __DIR__ . '/../../src/devhosts.php';
+        $hostname = gethostname();
+        if(in_array($hostname, $devhosts)) {
+            $settings = require __DIR__ . '/../../src/settings_dev.php';
+        } else {
+            $settings = require __DIR__ . '/../../src/settings_prod.php';
+        }
 
         // Instantiate the application
         $app = new App($settings);

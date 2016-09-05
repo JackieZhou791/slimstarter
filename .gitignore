@@ -2,3 +2,5 @@
 /cache/
 /logs/
 /nbproject/private/
+/src/settings_dev.php
+/src/settings_prod.php
