@@ -1,5 +1,5 @@
 <?php
-$s = require(__DIR__ . '/settings.php');
+$s = application_settings();
 $database = $s['settings']['database']['default'];
 return [
     'paths' => [

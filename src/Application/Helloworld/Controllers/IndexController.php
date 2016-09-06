@@ -1,7 +1,8 @@
 <?php
 namespace Application\Helloworld\Controllers;
 
-use Joyrun\BaseController;
+use Joyrun\Controller\BaseController;
+use Application\Backoffice\Model\Adminuser;
 
 class IndexController extends BaseController
 {
@@ -10,10 +11,7 @@ class IndexController extends BaseController
     {
         $c = $this->app->getContainer();
         $c['session']->set('name', 'jackie');
-        $this->render('helloworld/index.html');
-
-
-        return $this->response;
+        return $this->render('helloworld/index.html');
     }
 
     public function testsession()
@@ -21,5 +19,19 @@ class IndexController extends BaseController
 
         $c = $this->app->getContainer();
         echo $c['session']->get('name');
+    }
+
+    //multiple db access example
+    private function dbsample()
+    {
+        $c = $this->app->getContainer();
+
+        $user = Adminuser::find(1);
+
+        var_dump($user->toArray());
+
+        $db = $c['db'];
+        $rows = $db->getConnection('crew')->select('select * from users');
+        var_dump($rows);
     }
 }

@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Posters Galore Administration</title>
+    <title>Slim starter activities Administration</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/vendor/ng-admin/build/main.css"/>
+    <script type="text/javascript">
+        var baseUrl = "http://slimstarter.local/backoffice/";
+        var baseApiUrl = "http://slimstarter.local/backoffice/";
+        var username = "{{username}}";
+    </script>
 </head>
 <body ng-app="myApp">
 <div ui-view></div>
 <script type="text/javascript" src="/vendor/ng-admin/data.js" charset="utf-8"></script>
 <script type="text/javascript" src="/vendor/ng-admin/build/ng-admin.min.js" charset="utf-8"></script>
-<script type="text/javascript" src="/vendor/ng-admin/build/main.js" charset="utf-8"></script>
+<script type="text/javascript" src="/vendor/ng-admin/starter/app.js" charset="utf-8"></script>
 </body>
 </html>

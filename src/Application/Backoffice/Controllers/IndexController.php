@@ -1,59 +1,57 @@
 <?php
 namespace Application\Backoffice\Controllers;
 
-use Joyrun\BaseController;
-use Application\Backoffice\Model\Adminuser;
+use Joyrun\Controller\BaseController;
 
 class IndexController extends BaseController
 {
-
     public function index()
     {
-
-        $c = $this->app->getContainer();
-        $session = $c['session'];
+        $session = $this->get('session');
 
         if(!$session->get('admin_id')) {
-            return $this->response->withRedirect($c['router']->pathFor('backoffice.login'));
+            return $this->get('response')->withRedirect($this->get('router')->pathFor('backoffice.login'));
         }
 
-        $this->render('backoffice/index.html');
-        return $this->response;
+        $data['username'] = $session->get('admin_name');
+        
+        return $this->render('backoffice/index.html', $data );
     }
 
     public function login()
     {
-        $c = $this->app->getContainer();
-
-        $session = $c['session'];
-
+        $session = $this->get('session');
         if($session->get('admin_id')) {
-            return $this->response->withRedirect($c['router']->pathFor('backoffice.index'));
+            return $this->get('response')->withRedirect($this->get('router')->pathFor('backoffice.index'));
         }
-        $messages = $c['flash']->getMessages();
+        $messages = $this->get('flash')->getMessages();
 
         $data = ['messages' => $messages];
 
         $c = $this->app->getContainer();
-        $this->render('backoffice/login.html', $data);
-        return $this->response;
+        return $this->render('backoffice/login.html', $data);
     }
 
     public function postLogin()
     {
-        $c = $this->app->getContainer();
-
-        $auth = $c['adminauth']->attempt(
+        $auth = $this->get('adminauth')->attempt(
             $this->request->getParam('username'),
             $this->request->getParam('password')
         );
 
         if(!$auth) {
-            $c['flash']->addMessage('note', '用户名或密码不正确');
-            return $this->response->withRedirect($c['router']->pathFor('backoffice.login'));
+            $this->get('flash')->addMessage('note', '用户名或密码不正确');
+            return $this->get('response')->withRedirect($this->get('router')->pathFor('backoffice.login'));
         }
 
-        return $this->response->withRedirect($c['router']->pathFor('backoffice.index'));
+        return $this->get('response')->withRedirect($this->get('router')->pathFor('backoffice.index'));
     }
 
+    public function logout()
+    {
+        $session = $this->get('session');
+        $session->destroy();
+        
+        return $this->get('response')->withRedirect($this->get('router')->pathFor('backoffice.login'));
+    }
 }
