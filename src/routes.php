@@ -26,9 +26,9 @@ $app->group('/backoffice', function () use ($app) {
         $controller = new Application\Backoffice\Controllers\UserController($app);
 
         $app->get('', $controller('index'));
+        $app->post('', $controller('create'));
         $app->get('/{id:[0-9]+}', $controller('show'));
-        $app->get('/{id:[0-9]+}/edit', $controller('edit'));
-        $app->put('/{id:[0-9]+}', $controller('put'));
+        $app->put('/{id:[0-9]+}', $controller('update'));
         $app->delete('/{id:[0-9]+}', $controller('delete'));
     });
 });

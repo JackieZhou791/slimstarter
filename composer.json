@@ -19,6 +19,7 @@
         "monolog/monolog": "^1.17",
         "martynbiz/slim3-controller": "^0.0.0",
         "illuminate/database": "~5.1",
+        "illuminate/pagination": "~5.3",
         "twig/twig": "~1.24",
         "robmorgan/phinx" : "~0.6",
         "akrabat/rka-slim-session-middleware": "~2.0",

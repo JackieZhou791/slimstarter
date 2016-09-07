@@ -14,7 +14,7 @@ class Adminauth
 
     public function attempt($identifier, $password)
     {
-        $user = Adminuser::where('username', $identifier)->first();
+        $user = Adminuser::where('username', $identifier)->where('status', 1)->first();
 
         if(!$user->id) {
             return false;

@@ -7,3 +7,6 @@
 //fixed session_start init later than request
 $session = new \RKA\SessionMiddleware(['name' => 'slimstarter']);
 $session->start();
+
+//Assign global virables to view
+$app->add(new Joyrun\Middleware\Template());

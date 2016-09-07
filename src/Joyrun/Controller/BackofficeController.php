@@ -20,4 +20,14 @@ class BackofficeController extends BaseController
             return $this->haltonJson($data);
         }
     }
+    
+    public function revApiValue() 
+    {
+        
+        $baseUri = $this->get('request')->getRequestTarget();
+        preg_match('/[0-9]*$/',$baseUri, $matches);
+        if(!empty($matches[0])) {
+            return $matches[0]; 
+        }
+    }
 }

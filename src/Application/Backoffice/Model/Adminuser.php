@@ -8,4 +8,6 @@ class Adminuser extends Model
 {
 
     protected $table = 'adminusers';
+
+    protected $fillable = ['id', 'username', 'password', 'email', 'role', 'status'];
 }
