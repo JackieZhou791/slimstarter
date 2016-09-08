@@ -13,18 +13,25 @@ class UserController extends BackofficeController
         $params = $this->get('request')->getParams();
         $fields = ['id', 'username', 'email', 'status', 'created_at', 'updated_at'];
         
-        $currentPage = !empty($params['_page']) ? $params['_page'] : 1;
-
-        Paginator::currentPageResolver(function () use ($currentPage) {
-            return $currentPage;
-        });
-        
         $db = $this->get('db');
+            
         $totalCount = $db::table('adminusers')->count();
-        $alldata = $db::table('adminusers')->select($fields)
-                ->paginate(30)
-                ->toArray();
-        $data = $alldata['data'];
+        
+        $currentPage = !empty($params['_page']) ? $params['_page'] : '';
+        if(!empty($currentPage)) {
+            Paginator::currentPageResolver(function () use ($currentPage) {
+                return $currentPage;
+            });
+
+            $alldata = $db::table('adminusers')->select($fields)
+                    ->paginate(30)
+                    ->toArray();
+            $data = $alldata['data'];
+        } else {
+            
+            $data = Adminuser::all($fields)->toArray();
+        }
+
         
         foreach($data as $k => &$item) {
             $item = (array)$item;
